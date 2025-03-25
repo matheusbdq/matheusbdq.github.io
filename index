@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Minha Amor ❤️</title>
     <style>
+
+        #slideshow {
+            width: 100%;
+            max-width: 500px; /* Ajuste a largura máxima */
+            height: 300px; /* Ajuste a altura desejada */
+            margin: auto; /* Centraliza na tela */
+            overflow: hidden;
+            position: relative;
+        }
+        #slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta a imagem sem distorcer */
+            position: absolute;
+        }    
+
         body {
             text-align: center;
             font-family: Arial, sans-serif;
@@ -68,14 +84,27 @@
         trocarImagem();
 
         // Contador de tempo
-        const dataEspecial = new Date("2023-01-01"); // Coloque a data especial aqui
+        // Data inicial (substitua pela data que você quiser)
+        const dataEspecial = new Date("2024-09-11T00:00:00"); // Exemplo: 1º de janeiro de 2023
+
         function atualizarContador() {
             let agora = new Date();
             let diferenca = agora - dataEspecial;
+
+            // Calcular dias, horas, minutos e segundos
             let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-            document.getElementById("contador").innerText = `Estamos juntos há ${dias} dias! 🥰`;
+            let horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            let segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            // Atualizar o conteúdo do contador
+            document.getElementById("contador").innerHTML = 
+            `Estamos juntos há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos! 🥰`;
         }
-        atualizarContador();
+
+        // Atualizar a cada 1 segundo
+        setInterval(atualizarContador, 1000);
+        atualizarContador(); // Chama a função logo ao carregar a página
     </script>
 </body>
 </html>
