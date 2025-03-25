@@ -6,43 +6,6 @@
     <title>Para Meu Amor ❤️</title>
     <style>
 
-        /* Estilo básico da imagem */
-        .imagem {
-            width: 300px;
-            cursor: pointer;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Estilo do container onde os corações vão aparecer */
-        #container-corações {
-            position: relative;
-            height: 400px; /* Defina a altura que preferir */
-            width: 100%;
-            overflow: hidden;
-        }
-
-        /* Estilo dos corações */
-        .coracao {
-            position: absolute;
-            bottom: 0;
-            font-size: 30px;
-            color: red;
-            animation: subir 2s ease-out forwards;
-        }
-
-        /* Animação para os corações subirem */
-        @keyframes subir {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-200px); /* Ajuste a altura da animação */
-                opacity: 0;
-            }
-        }
-
         #slideshow {
             width: 100%;
             max-width: 500px; /* Ajuste a largura máxima */
@@ -87,12 +50,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Container para a imagem e os corações -->
-    <div id="container-corações">
-        <img class="imagem" src="img1.jpeg" alt="Imagem" onclick="mostrarCoracoes()">
-    </div>
-
     <h1>Para o amor da minha vida ❤️</h1>
     <div id="slideshow">
         <img src="img1.jpeg" alt="Foto 1">
@@ -114,30 +71,7 @@
     <p id="mensagem">Você é a melhor parte da minha vida. Te amo! 💖</p>
     <p id="contador"></p>
 
-
     <script>
-
-        // Função para mostrar os corações ao clicar na imagem
-        function mostrarCoracoes() {
-            // Criar um elemento para o coração
-            const coracao = document.createElement('div');
-            coracao.classList.add('coracao');
-            coracao.innerHTML = '❤️'; // Emoji de coração
-
-            // Definir posição aleatória para o coração (de acordo com a largura da tela)
-            const posicaoX = Math.random() * window.innerWidth;
-            coracao.style.left = `${posicaoX}px`;
-
-            // Adicionar o coração ao container
-            document.getElementById('container-corações').appendChild(coracao);
-
-            // Remover o coração depois que a animação acabar
-            setTimeout(() => {
-                coracao.remove();
-            }, 2000); // Tempo para a animação (2 segundos)
-        }
-
-
         // Slideshow
         let imagens = document.querySelectorAll("#slideshow img");
         let index = 0;
