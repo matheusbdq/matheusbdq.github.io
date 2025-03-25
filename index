@@ -85,7 +85,7 @@
 
         // Contador de tempo
         // Data inicial (substitua pela data que você quiser)
-        const dataEspecial = new Date("2024-09-11T00:00:00"); // Exemplo: 1º de janeiro de 2023
+        const dataEspecial = new Date("2024-11-09T00:00:00"); // Exemplo: 1º de janeiro de 2023
 
         function atualizarContador() {
             let agora = new Date();
