@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Amor ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+        }
+        #slideshow {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #slideshow img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        #mensagem {
+            font-size: 20px;
+            color: #d63384;
+            margin: 20px;
+        }
+        #contador {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Para o amor da minha vida ❤️</h1>
+    <div id="slideshow">
+        <img src="img1.jpg" alt="Foto 1">
+        <img src="img2.jpg" alt="Foto 2">
+        <img src="img3.jpg" alt="Foto 3">
+    </div>
+    <p id="mensagem">Você é a melhor parte da minha vida. Te amo! 💖</p>
+    <p id="contador"></p>
+
+    <script>
+        // Slideshow
+        let imagens = document.querySelectorAll("#slideshow img");
+        let index = 0;
+        function trocarImagem() {
+            imagens.forEach(img => img.style.display = "none");
+            imagens[index].style.display = "block";
+            index = (index + 1) % imagens.length;
+        }
+        setInterval(trocarImagem, 2000);
+        trocarImagem();
+
+        // Contador de tempo
+        const dataEspecial = new Date("2023-01-01"); // Coloque a data especial aqui
+        function atualizarContador() {
+            let agora = new Date();
+            let diferenca = agora - dataEspecial;
+            let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            document.getElementById("contador").innerText = `Estamos juntos há ${dias} dias! 🥰`;
+        }
+        atualizarContador();
+    </script>
+</body>
+</html>
