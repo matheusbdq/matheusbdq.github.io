@@ -51,13 +51,13 @@
 </head>
 <body>
 
-    <audio autoplay loop>
-        <source src="https://raw.githubusercontent.com/matheusbdq/matheusbdq.github.io/main/Love%20Yourself.mp3
-        " type="audio/mp3">
+    <audio id="audio" loop>
+        <source src="https://raw.githubusercontent.com/matheusbdq/matheusbdq.github.io/main/Love%20Yourself.mp3" type="audio/mp3">
+        Seu navegador não suporta o formato de áudio.
     </audio>
-
-    <!-- Botão para reproduzir a música-->
-    <button onclick="document.getElementById('audio').play()">Reproduzir Música</button>
+    
+    <!-- Botão para reproduzir a música -->
+    <button id="playButton">Reproduzir Música</button>
 
     <h1>Para o amor da minha vida ❤️</h1>
     <div id="slideshow">
@@ -102,10 +102,17 @@
 
     <script>
 
-        function playMusic() {
-        var audio = document.getElementById('audio');
-        audio.play();  // Inicia a música quando o botão é clicado
-        }
+        // Função para reproduzir a música
+            function playMusic() {
+            var audio = document.getElementById('audio');
+            audio.play();  // Toca a música quando a função é chamada
+            }
+
+        // Evento de clique no botão
+            document.getElementById('playButton').addEventListener('click', playMusic);
+
+        // Ou, se você quiser que a música comece após qualquer clique na página, descomente o código abaixo:
+        // document.body.addEventListener('click', playMusic);
 
         // Slideshow
         let imagens = document.querySelectorAll("#slideshow img");
