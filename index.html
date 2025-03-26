@@ -57,7 +57,7 @@
     </audio>
 
     <!-- Botão para reproduzir a música-->
-    <button onclick="document.getElementById('audio').play()">Reproduzir Música</button> -->
+    <button onclick="document.getElementById('audio').play()">Reproduzir Música</button>
 
     <h1>Para o amor da minha vida ❤️</h1>
     <div id="slideshow">
@@ -101,6 +101,12 @@
     <p id="contador"></p>
 
     <script>
+
+        function playMusic() {
+        var audio = document.getElementById('audio');
+        audio.play();  // Inicia a música quando o botão é clicado
+        }
+
         // Slideshow
         let imagens = document.querySelectorAll("#slideshow img");
         let index = 0;
